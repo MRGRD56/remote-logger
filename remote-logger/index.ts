@@ -7,14 +7,14 @@ const remoteLogger = (url: string, params?: RemoteLoggerParams): RemoteLogger =>
         baseURL: url
     });
 
-    const baseRequestQuery: BaseRequestParams = {
+    const requestParams: BaseRequestParams = {
         accessToken: params?.accessToken
     };
 
     if (!params?.skipServerValidation) {
         let isValid: boolean;
         axiosInstance.get('/check_remote_logger', {
-            params: baseRequestQuery
+            params: requestParams
         })
             .then(({data}) => {
                 isValid = data.app === '@mrgrd56/remote-logger-server' && data.version;
@@ -33,7 +33,9 @@ const remoteLogger = (url: string, params?: RemoteLoggerParams): RemoteLogger =>
     }
 
     const log = async (...data: any[]) => {
-        await axiosInstance.post('/log', data);
+        await axiosInstance.post('/log', data, {
+            params: requestParams
+        });
     };
 
     return {

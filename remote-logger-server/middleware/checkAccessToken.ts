@@ -2,7 +2,7 @@ import {RequestHandler} from "express";
 import {BaseRequestParams} from "@mrgrd56/remote-logger-common";
 
 const checkAccessToken = (actualAccessToken?: string): RequestHandler => (req, res, next) => {
-    const {accessToken} = req.params as BaseRequestParams;
+    const {accessToken} = req.query as BaseRequestParams;
 
     if (actualAccessToken === undefined || actualAccessToken === accessToken) {
         next();
