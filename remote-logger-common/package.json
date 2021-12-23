@@ -1,0 +1,12 @@
+{
+  "name": "@mrgrd56/remote-logger-common",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  }
+}

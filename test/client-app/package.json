@@ -1,0 +1,15 @@
+{
+  "name": "client-app",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "start": "nodemon index.ts"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4",
+    "nodemon": "^2.0.15"
+  }
+}
