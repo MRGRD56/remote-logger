@@ -4,7 +4,7 @@ const app = express();
 app.use(express.json());
 
 app.post('/log', ((req, res) => {
-    const from = req.query['from'];
+    const from = req.query['from'] ?? req.headers['x-forwarded-for'] ?? req.socket.remoteAddress;
     console.log(`[${from}]`, req.body);
 
     res.send();
