@@ -5,7 +5,7 @@ app.use(express.json());
 
 app.post('/log', ((req, res) => {
     const from = req.query['from'];
-    console.log(`\n[${from}]`, req.body);
+    console.log(`[${from}]`, req.body);
 
     res.send();
 }));
