@@ -1,8 +1,11 @@
 import express from 'express';
 
 const app = express();
+app.use(express.json());
+
 app.post('/log', ((req, res) => {
-    console.log({req});
+    const from = req.query['from'];
+    console.log(`\n[${from}]`, req.body);
 
     res.send();
 }));
