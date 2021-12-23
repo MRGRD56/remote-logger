@@ -1,8 +1,8 @@
 import {RequestHandler} from "express";
-import {BaseRequestBody} from "../types/request";
+import {BaseRequestParams} from "@mrgrd56/remote-logger-common";
 
 const checkAccessToken = (actualAccessToken?: string): RequestHandler => (req, res, next) => {
-    const {accessToken} = req.body as BaseRequestBody;
+    const {accessToken} = req.params as BaseRequestParams;
 
     if (actualAccessToken === undefined || actualAccessToken === accessToken) {
         next();

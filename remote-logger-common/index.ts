@@ -1,3 +1,3 @@
-export interface BaseRequestBody {
+export interface BaseRequestParams {
     accessToken?: string;
 }

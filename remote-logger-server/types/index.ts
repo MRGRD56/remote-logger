@@ -15,6 +15,6 @@ export interface RemoteLoggerServer {
 }
 
 export interface RemoteLog {
-    data: unknown[];
+    data: unknown;
     from?: string;
 }

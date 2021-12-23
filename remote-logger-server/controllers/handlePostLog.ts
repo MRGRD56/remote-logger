@@ -5,7 +5,7 @@ const handlePostLog = (app: Express, callback: (data: RemoteLog) => (void | Prom
     return app.post('/log', ((req, res) => {
         const data = req.body;
 
-        const from = req.query['from'].toString() ?? req.headers['x-forwarded-for'].toString() ?? req.socket.remoteAddress;
+        const from = req.query['from']?.toString() ?? req.headers['x-forwarded-for']?.toString() ?? req.socket.remoteAddress;
 
         callback({
             data,

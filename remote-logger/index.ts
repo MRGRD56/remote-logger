@@ -1,20 +1,20 @@
 import {RemoteLogger, RemoteLoggerParams} from "./types";
 import axios from "axios";
-import {BaseRequestBody} from "@mrgrd56/remote-logger-common";
+import {BaseRequestParams} from "@mrgrd56/remote-logger-common";
 
 const remoteLogger = (url: string, params?: RemoteLoggerParams): RemoteLogger => {
     const axiosInstance = axios.create({
         baseURL: url
     });
 
-    const baseRequestBody: BaseRequestBody = {
+    const baseRequestQuery: BaseRequestParams = {
         accessToken: params?.accessToken
     };
 
     if (!params?.skipServerValidation) {
         let isValid: boolean;
         axiosInstance.get('/check_remote_logger', {
-            data: baseRequestBody
+            params: baseRequestQuery
         })
             .then(({data}) => {
                 isValid = data.app === '@mrgrd56/remote-logger-server' && data.version;
@@ -33,9 +33,7 @@ const remoteLogger = (url: string, params?: RemoteLoggerParams): RemoteLogger =>
     }
 
     const log = async (...data: any[]) => {
-        await axiosInstance.post('/log', {
-            data
-        });
+        await axiosInstance.post('/log', data);
     };
 
     return {
