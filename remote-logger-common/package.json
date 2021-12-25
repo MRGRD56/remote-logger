@@ -1,11 +1,15 @@
 {
   "name": "@mrgrd56/remote-logger-common",
-  "version": "1.2.6",
+  "version": "1.3.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MRGRD56/remote-logger"
   },
   "exports": {
     ".": "./lib/index.js",

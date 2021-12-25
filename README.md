@@ -15,7 +15,7 @@ const logger = remoteLogger('http://localhost:3322', {
 
 logger.log('hello world');
 logger.warn('I warn ya one last time!');
-logger.error('an error occurred ＼（〇_ｏ）／', { code: 502325 });
+logger.error('an error occurred ＼（〇_ｏ）／', { code: 54272932 });
 logger.debug([4, 2], 'some debug message')
 ```
 
@@ -33,4 +33,5 @@ const loggerServer = remoteLoggerServer(3322, {
 });
 
 loggerServer.listen(consoleLogHandler());
+//or just loggerServer.listenConsole();
 ```

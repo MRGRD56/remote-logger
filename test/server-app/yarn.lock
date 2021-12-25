@@ -14,17 +14,17 @@
   dependencies:
     "@cspotcode/source-map-consumer" "0.8.0"
 
-"@mrgrd56/remote-logger-common@^1.2.6":
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/@mrgrd56/remote-logger-common/-/remote-logger-common-1.2.6.tgz#40be0c671f3ad80b2479c01f84ccdf2fa166c8e0"
-  integrity sha512-pyjXZgq9fnx5RE4DDB5tceov3CqIL2H7oQEAbM2B6627mdkZb2yKo0nrSxR7wTl/YK0wusEelbocwDIFuswMHg==
+"@mrgrd56/remote-logger-common@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@mrgrd56/remote-logger-common/-/remote-logger-common-1.3.0.tgz#8bec3267e4106824933efa75a77be1cf6832c4e9"
+  integrity sha512-NaEuEUUw6cbsGy0xS67V6Y844lqEnzhgLsplylyoOlLYgY+T3rn6s8jaiN9oCaY1d1UBkhzaywPwHuIjNlKAyw==
 
-"@mrgrd56/remote-logger-server@^1.2.8":
-  version "1.2.8"
-  resolved "https://registry.yarnpkg.com/@mrgrd56/remote-logger-server/-/remote-logger-server-1.2.8.tgz#6060527ecc03919c1772bdc2f8c4396449d6844e"
-  integrity sha512-AJgD+QHEBwOXo+p0dMm+i7qbKpCJrSWlXU4luclPJMPcUEWMUVm4cveW9mDXuRR9NrLU1PldGB/Tx0tLO1WbEA==
+"@mrgrd56/remote-logger-server@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@mrgrd56/remote-logger-server/-/remote-logger-server-1.3.0.tgz#097c6ff4c19c73b0d6c49636419eb94f8ae90a39"
+  integrity sha512-5TQm/b3TImXoDqXZh5bL6GVT8wKcPhcd5t6RRhhwDNC228YjGrBETwyGCwM8htq5vAqPYiCfZr1n+8AJELByeQ==
   dependencies:
-    "@mrgrd56/remote-logger-common" "^1.2.6"
+    "@mrgrd56/remote-logger-common" "^1.3.0"
     chalk "^4.1.2"
     cors "^2.8.5"
     express "^4.17.2"

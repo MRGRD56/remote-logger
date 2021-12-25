@@ -18,14 +18,14 @@ const logLevelChalks: Readonly<Record<LogLevel, Chalk>> = {
     [LogLevel.Debug]: chalk.bgWhite
 } as const;
 
-interface Params {
+export interface ConsoleLogHandlerParams {
     printTime?: boolean;
     printSender?: boolean;
     printLogLevel?: boolean;
     isDataAsArray?: boolean;
 }
 
-const consoleLogHandler = (params?: Params): LogHandler => ({data, logLevel, time, from, ipAddress}) => {
+const consoleLogHandler = (params?: ConsoleLogHandlerParams): LogHandler => ({data, logLevel, time, from, ipAddress}) => {
     const consoleLogFunction = consoleLogFunctions[logLevel];
     const logLevelChalk = logLevelChalks[logLevel];
 

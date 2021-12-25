@@ -29,7 +29,8 @@ const remoteLogger = (url: string, params?: RemoteLoggerParams): RemoteLogger =>
                     return;
                 }
 
-                throw Error(error.message);
+                const errorText = [error.message, error.response?.data].filter(data => data).join('\n');
+                throw Error(errorText);
             });
     }
 
