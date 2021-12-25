@@ -1,6 +1,6 @@
 {
   "name": "@mrgrd56/remote-logger-server",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
@@ -10,9 +10,6 @@
   "files": [
     "lib"
   ],
-  "exports": {
-    "./*": "./lib/*"
-  },
   "scripts": {
     "build": "tsc"
   },
