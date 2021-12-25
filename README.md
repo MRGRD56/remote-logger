@@ -1,4 +1,4 @@
-# remote-logger-server
+# remote-logger
 Node.JS Remote Logger
 
 ## Client
