@@ -1,19 +1,18 @@
-import {Express} from "express";
+import {RequestHandler} from "express";
 import {RemoteLog} from "../types";
+import {Observer} from "rxjs";
 
-const handlePostLog = (app: Express, callback: (data: RemoteLog) => (void | Promise<void>)) => {
-    return app.post('/log', ((req, res) => {
-        const data = req.body;
+const handlePostLog = (logObserver: Observer<RemoteLog>): RequestHandler => (req, res) => {
+    const data = req.body;
 
-        const from = req.query['from']?.toString() ?? req.headers['x-forwarded-for']?.toString() ?? req.socket.remoteAddress;
+    const from = req.query['from']?.toString() ?? req.headers['x-forwarded-for']?.toString() ?? req.socket.remoteAddress;
 
-        callback({
-            data,
-            from
-        });
+    logObserver.next({
+        data,
+        from
+    });
 
-        res.send();
-    }));
+    res.send();
 };
 
 export default handlePostLog;

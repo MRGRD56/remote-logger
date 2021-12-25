@@ -1,8 +1,11 @@
 {
   "name": "@mrgrd56/remote-logger-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.ts",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc"
   },
@@ -10,7 +13,8 @@
     "express": "^4.17.2",
     "cors": "^2.8.5",
     "uuid": "^8.3.2",
-    "moment": "^2.29.1"
+    "moment": "^2.29.1",
+    "rxjs": "^7.4.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
