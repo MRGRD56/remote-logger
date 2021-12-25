@@ -14,6 +14,9 @@ const logger = remoteLogger('http://localhost:3322', {
 });
 
 logger.log('hello world');
+logger.warn('I warn ya one last time!');
+logger.error('an error occurred ＼（〇_ｏ）／', { code: 502325 });
+logger.debug([4, 2], 'some debug message')
 ```
 
 ## Server
@@ -23,13 +26,11 @@ logger.log('hello world');
 #### Usage
 ```ts
 import remoteLoggerServer from '@mrgrd56/remote-logger-server';
+import consoleLogHandler from "@mrgrd56/remote-logger-server/logHandlers/consoleLogHandler";
 
 const loggerServer = remoteLoggerServer(3322, {
     accessToken: 'ecd356f4-ab2f-4ef2-b09f-ce60ff5aa74d'
 });
 
-loggerServer.listen(({from, data}) => {
-    const dataArray = Array.isArray(data) ? data : [data];
-    console.log(`[${from}]`, ...dataArray);
-});
+loggerServer.listen(consoleLogHandler());
 ```
