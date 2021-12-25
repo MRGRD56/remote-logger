@@ -1,14 +1,17 @@
 {
   "name": "@mrgrd56/remote-logger-server",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "lib"
+  ],
   "exports": {
-    "/": "./lib"
+    "./*": "./lib/*"
   },
   "scripts": {
     "build": "tsc"
