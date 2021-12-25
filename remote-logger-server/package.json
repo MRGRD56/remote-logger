@@ -1,20 +1,33 @@
 {
   "name": "@mrgrd56/remote-logger-server",
-  "version": "1.2.3",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "version": "1.2.8",
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
+  "exports": {
+    ".": "./lib/src/index.js",
+    "./lib/src": "./lib/src/",
+    "./lib/src/index": "./lib/src/index.js",
+    "./lib/src/index.js": "./lib/src/index.js",
+    "./lib/src/logHandlers/consoleLogHandler": "./lib/src/logHandlers/consoleLogHandler.js",
+    "./lib/src/logHandlers/consoleLogHandler.js": "./lib/src/logHandlers/consoleLogHandler.js",
+    "./lib/src/types": "./lib/src/types/index.js",
+    "./lib/src/types/index": "./lib/src/types/index.js",
+    "./lib/src/types/index.js": "./lib/src/types/index.js",
+    "./lib/package.json": "./lib/package.json",
+    "./package.json": "./package.json"
+  },
   "files": [
-    "lib"
+    "lib/**/*"
   ],
   "scripts": {
     "build": "tsc"
   },
   "dependencies": {
-    "@mrgrd56/remote-logger-common": "^1.2.0",
+    "@mrgrd56/remote-logger-common": "^1.2.6",
     "chalk": "^4.1.2",
     "cors": "^2.8.5",
     "express": "^4.17.2",

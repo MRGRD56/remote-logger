@@ -1,6 +1,6 @@
 {
   "name": "@mrgrd56/remote-logger",
-  "version": "1.2.0",
+  "version": "1.2.6",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
@@ -8,8 +8,18 @@
     "access": "public"
   },
   "exports": {
-    "/": "./lib"
+    ".": "./lib/index.js",
+    "./lib": "./lib/index.js",
+    "./lib/index": "./lib/index.js",
+    "./lib/index.js": "./lib/index.js",
+    "./lib/types": "./lib/types/index.js",
+    "./lib/types/index": "./lib/types/index.js",
+    "./lib/types/index.js": "./lib/types/index.js",
+    "./package.json": "./package.json"
   },
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
     "build": "tsc"
   },

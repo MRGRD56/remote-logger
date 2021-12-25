@@ -6,6 +6,7 @@
     "start": "nodemon index.ts"
   },
   "dependencies": {
+    "@mrgrd56/remote-logger": "^1.2.6"
   },
   "devDependencies": {
     "ts-node": "^10.4.0",

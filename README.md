@@ -7,7 +7,7 @@ Node.JS Remote Logger
 
 #### Usage
 ```ts
-import remoteLogger from "@mrgrd56/remote-logger";
+import remoteLogger from '@mrgrd56/remote-logger';
 
 const logger = remoteLogger('http://localhost:3322', {
     accessToken: 'ecd356f4-ab2f-4ef2-b09f-ce60ff5aa74d'
@@ -26,7 +26,7 @@ logger.debug([4, 2], 'some debug message')
 #### Usage
 ```ts
 import remoteLoggerServer from '@mrgrd56/remote-logger-server';
-import consoleLogHandler from "@mrgrd56/remote-logger-server/logHandlers/consoleLogHandler";
+import consoleLogHandler from '@mrgrd56/remote-logger-server/lib/src/logHandlers/consoleLogHandler';
 
 const loggerServer = remoteLoggerServer(3322, {
     accessToken: 'ecd356f4-ab2f-4ef2-b09f-ce60ff5aa74d'
