@@ -1,3 +1,3 @@
-yarn --cwd ../remote-logger-common publish --no-git-tag-version
-yarn --cwd ../remote-logger publish --no-git-tag-version
-yarn --cwd ../remote-logger-server publish
+yarn --cwd $PSScriptRoot/../remote-logger-common publish --no-git-tag-version
+yarn --cwd $PSScriptRoot/../remote-logger publish --no-git-tag-version
+yarn --cwd $PSScriptRoot/../remote-logger-server publish
