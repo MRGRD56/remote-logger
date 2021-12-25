@@ -9,12 +9,15 @@ const handlePostLog = (logObserver: Observer<RemoteLog>): RequestHandler => (req
 
     const {from, logLevel} = query;
     const ipAddress = (req.headers['x-forwarded-for']?.toString() ?? req.socket.remoteAddress)?.replace(/^.*:/, '');
+    const requestTimeString = req.headers['date'] ?? new Date();
+    const requestTime = requestTimeString ? new Date(requestTimeString) : undefined;
 
     logObserver.next({
         data,
         from,
         ipAddress,
-        logLevel: logLevel ?? LogLevel.Info
+        logLevel: logLevel ?? LogLevel.Info,
+        time: requestTime
     });
 
     res.send();

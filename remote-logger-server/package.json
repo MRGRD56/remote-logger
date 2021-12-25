@@ -14,7 +14,8 @@
     "cors": "^2.8.5",
     "uuid": "^8.3.2",
     "moment": "^2.29.1",
-    "rxjs": "^7.4.0"
+    "rxjs": "^7.4.0",
+    "chalk": "^4.1.2"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",

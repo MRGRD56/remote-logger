@@ -13,3 +13,5 @@ export interface LogRequestParams extends BaseRequestParams {
     from?: string;
     logLevel?: LogLevel;
 }
+
+export type LogFunction = (...data: any[]) => void;

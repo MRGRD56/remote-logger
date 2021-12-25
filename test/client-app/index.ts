@@ -5,3 +5,6 @@ const logger = remoteLogger('http://localhost:3322', {
 });
 
 logger.log('hello world');
+logger.warn('I warn ya one last time!');
+logger.error('an error occurred ＼（〇_ｏ）／', { code: 502325 });
+logger.debug([4, 2], 'some debug message')

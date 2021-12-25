@@ -1,6 +1,7 @@
 import {RemoteLogger, RemoteLoggerParams} from "./types";
-import axios from "axios";
-import {BaseRequestParams} from "@mrgrd56/remote-logger-common";
+import axios, {AxiosRequestHeaders} from "axios";
+import {BaseRequestParams, LogLevel, LogRequestParams} from "@mrgrd56/remote-logger-common";
+import * as moment from "moment";
 
 const remoteLogger = (url: string, params?: RemoteLoggerParams): RemoteLogger => {
     const axiosInstance = axios.create({
@@ -32,14 +33,27 @@ const remoteLogger = (url: string, params?: RemoteLoggerParams): RemoteLogger =>
             });
     }
 
-    const log = async (...data: any[]) => {
-        await axiosInstance.post('/log', data, {
-            params: requestParams
+    const createLogFunction = (logLevel: LogLevel) => (...data: any[]) => {
+        const params: LogRequestParams = {
+            ...requestParams,
+            logLevel
+        };
+
+        const headers: AxiosRequestHeaders = {
+            date: moment().locale('en').format('ddd, DD MMM YYYY HH:mm:ss ZZ')
+        };
+
+        axiosInstance.post('/log', data, {
+            params,
+            headers
         });
-    };
+    }
 
     return {
-        log
+        log: createLogFunction(LogLevel.Info),
+        warn: createLogFunction(LogLevel.Warn),
+        error: createLogFunction(LogLevel.Error),
+        debug: createLogFunction(LogLevel.Debug)
     };
 };
 
