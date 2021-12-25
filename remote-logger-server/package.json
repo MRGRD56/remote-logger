@@ -1,6 +1,6 @@
 {
   "name": "@mrgrd56/remote-logger-server",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
@@ -14,13 +14,13 @@
     "build": "tsc"
   },
   "dependencies": {
+    "@mrgrd56/remote-logger-common": "^1.2.0",
     "chalk": "^4.1.2",
     "cors": "^2.8.5",
     "express": "^4.17.2",
     "moment": "^2.29.1",
     "rxjs": "^7.4.0",
-    "uuid": "^8.3.2",
-    "@mrgrd56/remote-logger-common": "^1.2.0"
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
