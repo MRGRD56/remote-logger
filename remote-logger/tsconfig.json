@@ -7,9 +7,13 @@
       "DOM"
     ],
     "sourceMap": true,
-    "strict": true
+    "strict": true,
+    "declaration": true,
+    "outDir": "lib"
   },
+  "include": ["src"],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "lib"
   ]
 }
